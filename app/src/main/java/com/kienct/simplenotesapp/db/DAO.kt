@@ -42,7 +42,7 @@ class DAO(context: Context) {
 
     fun selectAll(): MutableList<Item> {
         val output = arrayListOf<Item>()
-        val sql = "select * from ${DBManager.ITEMS}"
+        val sql = "select * from ${DBManager.ITEMS} order by ${DBManager.FAVORITE} desc, ${DBManager.LAST_EDITED} desc"
         val cursor = db.rawQuery(sql, null)
         while (cursor.moveToNext()) {
             val id = cursor.getInt(cursor.getColumnIndex(DBManager.ITEM_ID))
