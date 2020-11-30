@@ -35,7 +35,7 @@ class UpdateActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(
             when (isFavourite) {
-                0 -> R.menu.menu_create
+                0 -> R.menu.menu_unfavorite_item
                 else -> R.menu.menu_favorite_item
             }, menu
         )

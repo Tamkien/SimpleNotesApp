@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/item_save"
-        android:title="Save"
+        android:title="@string/save"
         android:icon="@drawable/ic_baseline_save_24"
         app:showAsAction="always" />
     <item
-        android:title="Favorite"
+        android:title="@string/favorite"
         android:id="@+id/item_favorite"
         android:icon="@drawable/ic_baseline_star_24"
         app:showAsAction="always" />
     <item
-        android:title="Delete"
+        android:title="@string/delete"
         android:id="@+id/item_delete"
         android:icon="@drawable/ic_baseline_delete_24"
         app:showAsAction="always" />
     <item
-        android:title="Setting"
+        android:title="@string/setting"
         app:showAsAction="never" />
 </menu>

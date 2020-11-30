@@ -3,4 +3,8 @@
     <string name="floating_action_button">FloatingActionButton</string>
     <string name="title">Title</string>
     <string name="note">Note</string>
+    <string name="save">Save</string>
+    <string name="favorite">Favorite</string>
+    <string name="delete">Delete</string>
+    <string name="setting">Setting</string>
 </resources>
