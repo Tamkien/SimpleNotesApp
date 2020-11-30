@@ -56,11 +56,6 @@ class CreateActivity : AppCompatActivity() {
             }
             true
         }
-        R.id.item_share -> {
-//            Log.d("ActionBar", Calendar.getInstance().time.toString())
-            true
-        }
-
         else -> {
             // If we got here, the user's action was not recognized.
             // Invoke the superclass to handle it.

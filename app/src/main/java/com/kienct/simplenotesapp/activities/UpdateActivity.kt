@@ -1,5 +1,7 @@
 package com.kienct.simplenotesapp.activities
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +14,6 @@ import com.kienct.simplenotesapp.db.DAO
 import com.kienct.simplenotesapp.entities.Item
 import kotlinx.android.synthetic.main.activity_update.*
 import java.util.*
-import kotlin.properties.Delegates
 
 class UpdateActivity : AppCompatActivity() {
     private var isFavourite = 0
@@ -50,7 +51,7 @@ class UpdateActivity : AppCompatActivity() {
             DAO(this).update(i)
             val intent = Intent(this, ReadActivity::class.java)
             startActivity(intent)
-            Log.d("ActionBar", i.lastEdited.toString())
+            Log.d("ActionBar", i.lastEdited)
             true
         }
         R.id.item_favorite -> {
@@ -67,8 +68,26 @@ class UpdateActivity : AppCompatActivity() {
             }
             true
         }
-        R.id.item_share -> {
+        R.id.item_delete -> {
 //            Log.d("ActionBar", Calendar.getInstance().time.toString())
+            val dialog = AlertDialog.Builder(this).create()
+            dialog.setTitle("Delete Item")
+            dialog.setMessage("Wanna delete this item?")
+            dialog.setButton(
+                AlertDialog.BUTTON_NEGATIVE, "Cancel"
+            ) { _: DialogInterface, _: Int -> dialog.dismiss() }
+            dialog.setButton(
+                AlertDialog.BUTTON_POSITIVE, "OK"
+            ){
+                    _: DialogInterface, _: Int ->
+                run {
+                    DAO(this).delete(id)
+                    val intent = Intent(this, ReadActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            dialog.show()
+
             true
         }
 
