@@ -78,8 +78,7 @@ class UpdateActivity : AppCompatActivity() {
             ) { _: DialogInterface, _: Int -> dialog.dismiss() }
             dialog.setButton(
                 AlertDialog.BUTTON_POSITIVE, "OK"
-            ){
-                    _: DialogInterface, _: Int ->
+            ) { _: DialogInterface, _: Int ->
                 run {
                     DAO(this).delete(id)
                     val intent = Intent(this, ReadActivity::class.java)

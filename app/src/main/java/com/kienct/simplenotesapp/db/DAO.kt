@@ -33,10 +33,10 @@ class DAO(context: Context) {
         values.put(DBManager.TITLE, item.title)
         values.put(DBManager.FAVORITE, item.isFavourite)
         return db.update(
-                DBManager.ITEMS,
-                values,
-                "${DBManager.ITEM_ID}=?",
-                arrayOf(item.id.toString())
+            DBManager.ITEMS,
+            values,
+            "${DBManager.ITEM_ID}=?",
+            arrayOf(item.id.toString())
         )
     }
 

@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activities.DeleteActivity" />
         <activity android:name=".activities.UpdateActivity" />
         <activity android:name=".activities.CreateActivity" />
         <activity android:name=".activities.ReadActivity">
